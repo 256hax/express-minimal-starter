@@ -17,11 +17,26 @@ app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
-app.use(cors()); // CORS-enabled for all origins
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// -------------------------------------------
+//  CORS Config
+// -------------------------------------------
+// // Add a list of allowed origins.
+// // If you have more origins you would like to add, you can add them to the array below.
+// const allowedOrigins = ["http://127.0.0.1:5173", "http://localhost:5173"];
+
+// const options: cors.CorsOptions = {
+//   origin: allowedOrigins
+// };
+
+// // Then pass these options to cors:
+// app.use(cors(options));
+
+app.use(cors()); // CORS-enabled for all origins
 
 // -------------------------------------------
 //  Routing
