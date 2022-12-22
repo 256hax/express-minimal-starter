@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // const allowedOrigins = ["http://127.0.0.1:5173", "http://localhost:5173"];
 
 // const options: cors.CorsOptions = {
-//   origin: allowedOrigins
+//   origin: allowedOrigins,
+//   credentials: true,
 // };
 
 // // Then pass these options to cors:
