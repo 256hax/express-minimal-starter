@@ -60,7 +60,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 
 const port = 4100;
 app.listen(port, () => {
-  console.log('start express server. port:', port)
+  console.log(`start express server => http://localhost:${port}`)
 });
 
 module.exports = app;
