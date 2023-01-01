@@ -12,7 +12,7 @@ router.post("/", async(req, res, next) => {
     const symbol = '!@#$%^&*()"<>'; // Example symbole for view
     const sampleKey = process.env.DOT_SAMPLE_KEY; // dotenv
 
-    res.render(
+    return res.render(
       'hello',
       {
         nickName: nickName,
