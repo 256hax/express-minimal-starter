@@ -9,7 +9,7 @@ router.post("/", async(req, res, next) => {
     res.header('Content-Type', 'application/json; charset=utf-8');
     
     const nickName = req.body.nick_name; // Get request parameta
-    const symbol = '!@#$%^&*()"<>'; // Example symbole for view
+    const symbol = '!@#$%^&*()<>'; // Example symbole for view
     const sampleKey = process.env.DOT_SAMPLE_KEY; // dotenv
 
     return res.render(
