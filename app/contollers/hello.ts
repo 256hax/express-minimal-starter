@@ -21,6 +21,7 @@ router.post("/", async(req, res, next) => {
       }
     );
   } catch (error) {
-    next(error);
+    console.log(error);
+    return res.status(400).json(error);
   }
 });
