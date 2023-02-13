@@ -4,7 +4,7 @@ import { Router } from 'express';
 dotenv.config();
 export const router = Router();
 
-router.post("/", async(req, res, next) => {
+router.post('/', async(req, res, next) => {
   try {
     res.header('Content-Type', 'application/json; charset=utf-8');
     

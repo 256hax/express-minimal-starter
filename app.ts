@@ -1,33 +1,33 @@
-import createHttpError from "http-errors";
-import express from "express";
-import { Request, Response, NextFunction } from "express";
-import path from "path";
-import cookieParser from "cookie-parser";
-import logger, { token } from "morgan";
+import createHttpError from 'http-errors';
+import express from 'express';
+import { Request, Response, NextFunction } from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger, { token } from 'morgan';
 import cors from 'cors';
 
-import { router as helloRouter } from "./app/contollers/hello";
+import { router as helloRouter } from './app/contollers/hello';
 
 const app = express();
 
 // -------------------------------------------
 //  App Config
 // -------------------------------------------
-app.set("views", path.join(__dirname, "/app/views"));
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, '/app/views'));
+app.set('view engine', 'ejs');
 
-app.use(logger("dev"));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // -------------------------------------------
 //  CORS Config
 // -------------------------------------------
 // // Add a list of allowed origins.
 // // If you have more origins you would like to add, you can add them to the array below.
-// const allowedOrigins = ["http://127.0.0.1:5173", "http://localhost:5173"];
+// const allowedOrigins = ['http://127.0.0.1:5173', 'http://localhost:5173'];
 
 // const options: cors.CorsOptions = {
 //   origin: allowedOrigins,
@@ -42,7 +42,7 @@ app.use(cors()); // CORS-enabled for all origins
 // -------------------------------------------
 //  Routing
 // -------------------------------------------
-app.use("/hello", helloRouter);
+app.use('/hello', helloRouter);
 
 // -------------------------------------------
 //  Server Config
@@ -52,10 +52,10 @@ app.use((req: Request, res: Response, next: NextFunction) =>
 );
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   res.status(err.status || 500);
-  res.render("error");
+  res.render('error');
 });
 
 const port = 4100;
