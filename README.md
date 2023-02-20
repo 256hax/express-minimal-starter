@@ -2,14 +2,13 @@
 Node.js x Express x TypeScript copy-pasteable minimal starter template.  
 
 ## Run
-### Terminal 1st
+First terminal:
 ```
 % npm i
 % npm run dev
 ```
 
-### Terminal 2nd
-send request
+Second terminal(send request):
 ```
 curl --location --request POST 'http://localhost:4100/hello' \
 --header 'Content-Type: application/json' \
