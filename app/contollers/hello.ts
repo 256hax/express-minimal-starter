@@ -20,6 +20,16 @@ router.post('/', async(req, res, next) => {
         sampleKey: sampleKey,
       }
     );
+    // Or, resj.sjon is more simpler for deploying server.
+    // res.render needs some settings on server.
+    // 
+    // return res.json(
+    //   {
+    //     nickName: nickName,
+    //     symbol: symbol,
+    //     sampleKey: sampleKey,
+    //   }
+    // );
   } catch (error) {
     console.log(error);
     return res.status(400).json(error);
